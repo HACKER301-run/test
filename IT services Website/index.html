@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT service</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/w3.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/service-3.png" type="image/x-icon">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    
+    <!-- header -->
+
+    <header class="header">
+
+        <a href="#" class="logo"><span style=" border-radius: 12px;  color:rgba(61, 61, 61, 0.281);padding: 6px; text-shadow:2px 1px white;" class="w3-border w3-hide-small">Scrap2New </span>&nbsp;IT Services </a>
+
+        <nav class="navbar">
+
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#faq" class="w3-hide-medium" >FAQs</a>
+            <a href="#reviews" class="w3-hide-medium">reviews</a>
+            <a href="#contact">contact</a>
+            <a href="#contact"  onclick="document.getElementById('myModal').style.display='block'"  style="border: 0;  background-color: white; color:blue; padding: 6px;">Login</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header ends -->
+
+    <!-- home -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>we are your <span>computer services</span></h3>
+            <a href="#" class="logo"><span style=" border-radius: 12px;  color:rgba(61, 61, 61, 0.281);padding: 6px; text-shadow:2px 1px white;" class="w3-border w3-hide-medium w3-hide-large">Scrap2New </span>&nbsp; </a>
+            <p> Scrap2New is an innovative IT service that specializes in refurbishing and repurposing old, discarded electronics into fully functional, like-new devices</p>
+        </div>
+
+    </section>
+
+    <!-- home end -->
+
+    <!-- about us -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span>about</span> us</h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="images/about.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <h3></h3>
+                <p>At Scrap2New, we're passionate about revolutionizing the way we think about technology and the environment. Our mission is to bridge the gap between innovation and sustainability by refurbishing and repurposing old, discarded electronics into fully functional, like-new devices.<br>
+                    Scrap2New was born out of a desire to make a positive impact on the environment and to provide affordable technology solutions to individuals and organizations. Our team of experts has years of experience in the IT industry, and we've seen firsthand the devastating effects of electronic waste on our planet. We knew that there had to be a better way, and so we set out to create a company that would challenge the status quo and push the boundaries of what's possible.</p>
+                <a class="btn w3-button" onclick="myFunction('Demo1')">read more</a>
+                <div id="Demo1" class="w3-hide w3-container">
+                  <b>  Our Vision</b><br>
+
+                    Our vision is a world where technology and sustainability go hand-in-hand. We believe that everyone deserves access to reliable, affordable technology, and that this shouldn't come at the expense of the environment. We're committed to reducing electronic waste, promoting sustainable practices, and inspiring others to join us on this journey.
+                    
+                 <b>   Our Values</b> <br>
+                    
+                    Sustainability: We're dedicated to reducing our environmental footprint and promoting sustainable practices throughout our operations.
+                    Innovation: We're always looking for new and better ways to refurbish and repurpose old electronics, and to develop creative solutions to complex problems.
+                    Quality: We're committed to delivering high-quality products and services that meet the needs of our customers.
+                    Community: We believe in building strong relationships with our customers, partners, and the wider community, and in working together to create positive change.
+                <b>    Our Team</b><br>
+                    
+                    Our team is made up of passionate, experienced professionals who share our vision and values. We're a diverse group of individuals with expertise in IT, sustainability, and customer service, and we're united by our commitment to making a difference.
+                    
+                  
+                </div>
+                <script>
+                    function myFunction(id) {
+                      var x = document.getElementById(id);
+                      if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                        x.previousElementSibling.className = 
+                        x.previousElementSibling.className.replace("w3-black", "w3-red");
+                      } else { 
+                        x.className = x.className.replace(" w3-show", "");
+                        x.previousElementSibling.className = 
+                        x.previousElementSibling.className.replace("w3-red", "w3-black");
+                      }
+                    }
+                    </script>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- about end -->
+
+    <!-- counter -->
+
+    <section class="counter">
+
+        <h1 class="heading"> <span>some facts in numbers</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <h2 class="count">1500 </h2>
+                <h3>clients</h3>
+                
+            </div>
+
+            <div class="box">
+                <h2 class="count">100 </h2>
+                <h3>special tools</h3>
+               
+            </div>
+
+            <div class="box">
+                <h2 class="count">2100 </h2>
+                <h3>devices</h3>
+          
+            </div>
+
+            <div class="box">
+                <h2 class="count">18 </h2>
+                <h3>years</h3>
+            
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- counter ends -->
+
+
+    <!-- services -->
+
+    <section class="services" id="services">
+
+        <h1 class="heading">our <span>services</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/service-1.png" alt="">
+                <h3>smart watches services</h3>
+                <p> 
+                    We provide sustainable IT solutions that help organizations reduce their environmental footprint and promote sustainable practices. </p>
+            </div>
+
+            <div class="box">
+                <img src="images/service-2.png" alt="">
+                <h3>sport cameras</h3>
+                <p>Our workshops are designed to be interactive, engaging, and informative, and can be tailored to meet your specific needs and goals.</p>
+            </div>
+
+            <div class="box">
+                <img src="images/service-3.png" alt="">
+                <h3>PC and mac services</h3>
+                <p> Our team of experts will work with you to develop a customized sustainability plan that meets your business needs and goals .</p>
+            </div>
+
+            <div class="box">
+                <img src="./images/coding.jfif" alt="">
+                <h3>Coding Class <span class="w3-tag w3-xlarge w3-padding w3-red" style="transform:rotate(-10deg)">NEW</span></h3>
+                <p>We recently include coding class on our IT service to train and build potential programming who will use thier skill to solve  problems</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- services end-->
+
+    <!-- faq -->
+
+    <section class="faq" id="faq">
+
+        <h1 class="heading"><span>questions</span> and <span>answers</span> </h1>
+
+        <div class="accordion-container">
+            
+            <div class="accordion active">
+                <div class="accordion-heading">
+                    <h3>What is Scrap2New? </h3>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <p class="accordion-content"> Scrap2New is a company that provides sustainable technology solutions, including refurbished electronics, electronic waste recycling, IT asset disposition, data destruction, and sustainable IT consulting services.  </div>
+
+            <div class="accordion">
+                <div class="accordion-heading">
+                    <h3>What is the goal of Scrap2New's refurbished electronics service?</h3>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <p class="accordion-content">
+                    The goal of our refurbished electronics service is to reduce electronic waste by refurbishing and repurposing old, discarded electronics into fully functional, like-new devices, making affordable technology solutions available to individuals and organizations.
+                </p>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-heading">
+                    <h3>How does Scrap2New's electronic waste recycling service work? </h3>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <p class="accordion-content">
+                    Our electronic waste recycling service collects, dismantles, and recycles old electronics, ensuring that all hazardous materials are handled and disposed of in accordance with international best practices, minimizing the environmental impact of electronic waste.
+                </p>
+            </div>
+
+
+            <div class="accordion">
+                <div class="accordion-heading">
+                    <h3> What is IT Asset Disposition (ITAD), and how can Scrap2New help with it? </h3>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <p class="accordion-content"> IT Asset Disposition (ITAD) is the process of securely and sustainably disposing of retired IT assets. Scrap2New's ITAD services help organizations identify the value of their assets, refurbish or recycle them, and provide a detailed report on the disposition of their equipment.</p>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-heading">
+                    <h3> How does Scrap2New's data destruction service ensure data security? </h3>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <p class="accordion-content">
+                    Our data destruction service uses certified processes to completely erase sensitive data from retired IT assets, ensuring that data is safely and securely destroyed, giving organizations peace of mind that their data is protected
+                </p>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- faq ends-->
+
+    <!-- reviews -->
+
+    <section class="reviews" id="reviews">
+
+        <h1 class="heading">clients <span>review</span></h1>
+
+        <div class="swiper review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="images/review-1.png" alt="">
+                    <h3>john deo</h3>
+                    <span>satisfied client</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda beatae non explicabo temporibus at doloribus ut quas, iusto consectetur maxime accusantium dicta sed harum tempore quae nemo nam itaque error?</p>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="images/review-2.png" alt="">
+                    <h3>john deo</h3>
+                    <span>satisfied client</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda beatae non explicabo temporibus at doloribus ut quas, iusto consectetur maxime accusantium dicta sed harum tempore quae nemo nam itaque error?</p>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="images/review-3.png" alt="">
+                    <h3>john deo</h3>
+                    <span>satisfied client</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda beatae non explicabo temporibus at doloribus ut quas, iusto consectetur maxime accusantium dicta sed harum tempore quae nemo nam itaque error?</p>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="images/review-4.png" alt="">
+                    <h3>john deo</h3>
+                    <span>satisfied client</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda beatae non explicabo temporibus at doloribus ut quas, iusto consectetur maxime accusantium dicta sed harum tempore quae nemo nam itaque error?</p>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="images/review-5.png" alt="">
+                    <h3>john deo</h3>
+                    <span>satisfied client</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda beatae non explicabo temporibus at doloribus ut quas, iusto consectetur maxime accusantium dicta sed harum tempore quae nemo nam itaque error?</p>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- reviews end-->
+
+    <!-- contact -->
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"><span>contact</span> us</h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="images/Service 24_7.gif" alt="">
+            </div>
+
+            <form action="mailto:monfungn@gmail.com" method="post" enctype="text/plain">
+
+                <div class="inputBox">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="last Name">
+                </div>
+
+                <div class="message">
+                    <input type="text" placeholder="Subject">
+                    <select name="prob" id="prob">
+                        <option value="select">Select your problem</option>
+                        <option value="service">PC and Mac notebook service</option>
+                        <option value="service">Personal devices security</option>
+                        <option value="service">Data Management service</option>
+                        <option value="service">Coding Class</option>
+                    </select>
+                </div>
+
+                <textarea placeholder="Your Message" id="" cols="30" rows="10"></textarea>
+
+                <input type="submit" value="contact us" class="btn">
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- contact end -->
+<!-- Authentication Modal -->
+<div id="myModal" class="w3-modal" style="margin:20px auto;">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container w3-blue" id="modalHeader"> 
+            <span onclick="document.getElementById('myModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h2 id="modalTitle">Sign In</h2>
+        </header>
+        <span id="messageVal"></span>
+        <div class="w3-container" id="modalBody">
+            <!-- Sign In Form -->
+            <div id="signInForm">
+                <form id="signInForm">
+                    <div class="w3-section">
+                        <label for="signInEmail">Email</label>
+                        <input class="w3-input w3-border" type="email" id="signInEmail" name="signInEmail" required>
+                    </div>
+                    <div class="w3-section">
+                        <label for="signInPassword">Password</label>
+                        <input class="w3-input w3-border" type="password" id="signInPassword" name="signInPassword" required>
+                    </div>
+                    <button type="submit" class="w3-button w3-blue">Sign In</button>
+                    <a href="./control/pswdReset.html" class="w3-text-blue w3-right w3-padding">Forgotton Password <span class="w3-black w3-padding">CLICK ME</span> </a>
+                </form>
+                <br>
+                
+            </div>
+            
+            <!-- Sign Up Form -->
+            <div id="signUpForm" style="display: none;">
+                <form id="signUpForm">
+                    <div class="w3-section">
+                        <label for="signUpName">FullName</label>
+                        <input class="w3-input w3-border" type="text" id="signUpName" name="signUpName" placeholder="Surname middleName lastname" required>
+                    </div>
+                    <div class="w3-section">
+                        <label for="signUpMat">MatricNo/RegNo</label>
+                        <input class="w3-input w3-border" type="text" id="signUpMat" name="signUpMat" placeholder="20/9... or 20253bg.." required>
+                    </div>
+                    <div class="w3-section">
+                        <label for="signUpDept">Department</label>
+                        <input class="w3-input w3-border" type="text" id="signUpDept" name="signUpDept" placeholder="Department.." required>
+                    </div>
+                    <div class="w3-section">
+                        <label for="signUpLevel">Level</label>
+                        <input class="w3-input w3-border" type="text" id="signUpLevel" name="signUpLevel" placeholder="Current level" required>
+                    </div>
+                    <div class="w3-section">
+                        <label for="signUpEmail">Email</label>
+                        <input class="w3-input w3-border" type="email" id="signUpEmail" name="signUpEmail" placeholder="email" required>
+                    </div>
+                    <div class="w3-section">
+                        <label for="signUpPassword">Password</label>
+                        <input class="w3-input w3-border" type="password" id="signUpPassword" name="signUpPassword" placeholder="Must Be morethan 6 characters" required>
+                    </div>
+                    
+                    <button type="submit" class="w3-button w3-green">Sign Up</button>
+                </form>
+                <br>
+                <div class="social-login">
+                    
+            </div>
+        </div>
+        <br>
+        <footer class="w3-container" id="modalFooter">
+            <p id="toggleText">Don't have an account? <a href="#" onclick="toggleForms()" class="w3-button w3-black">Sign Up</a></p>
+            <br>
+        </footer>
+    </div>
+</div>
+
+
+<script>
+    function toggleForms() {
+        var signInForm = document.getElementById('signInForm');
+        var signUpForm = document.getElementById('signUpForm');
+        var modalTitle = document.getElementById('modalTitle');
+        var toggleText = document.getElementById('toggleText');
+        
+        if (signInForm.style.display === 'none') {
+            signInForm.style.display = 'block';
+            signUpForm.style.display = 'none';
+            modalTitle.textContent = 'Sign In';
+         toggleText.innerHTML = "Don't have an account? <a href='#' onclick='toggleForms()'>Sign Up</a>";
+        } else {
+            signInForm.style.display = 'none';
+            signUpForm.style.display = 'block';
+            modalTitle.textContent = 'Sign Up';
+            toggleText.innerHTML = "Already have an account? <a href='#' onclick='toggleForms()'>Sign In</a>";
+        }
+    }
+</script>
+<!-- Include the Firebase library -->
+<script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js';
+    import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js';
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js';
+  
+    // Initialize Firebase
+    const firebaseConfig = {
+    apiKey: "AIzaSyBJXJKVrLL8LQ1fIIO7i5jDZvCfWi-SFqw",
+    authDomain: "scra2new.firebaseapp.com",
+    projectId: "scra2new",
+    storageBucket: "scra2new.appspot.com",
+    messagingSenderId: "188933479868",
+    appId: "1:188933479868:web:5b2e348132d3db1c0c1fb9"
+  };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  
+    // Get a reference to the Realtime Database
+    const database = getDatabase(app);
+  
+    // Get a reference to the Authentication module
+    const auth = getAuth(app);
+  
+    // Sign In functionality
+    document.getElementById('signInForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('signInEmail').value;
+      const password = document.getElementById('signInPassword').value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // User signed in successfully
+          console.log('User signed in successfully');
+          window.location="./control/home.html";
+        })
+        .catch((error) => {
+          // Handle sign in errors
+          if( navigator.onLine === false){
+            alert("check Network connection")
+          }
+       else{
+      alert("Invalid credential")
+       }
+
+        
+        });
+    });
+  
+    // Sign Up functionality
+    document.getElementById('signUpForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const fullName = document.getElementById('signUpName').value;
+      const matricNo = document.getElementById('signUpMat').value;
+      const department = document.getElementById('signUpDept').value;
+      const level = document.getElementById('signUpLevel').value;
+      const email = document.getElementById('signUpEmail').value;
+      const password = document.getElementById('signUpPassword').value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // User created successfully
+          const userId = userCredential.user.uid;
+          set(ref(database, 'users/' + userId), {
+            fullName: fullName,
+            matricNo: matricNo,
+            department: department,
+            level: level,
+            email: email
+          });
+          alert('User created successfully');
+          window.location="./index.html";
+        })
+        .catch((error) => {
+          // Handle sign up errors
+          console.error('Error creating user:', error);
+          alert('ERROR CREATING USER')
+          if(password<6){
+            alert('password must greater than six')
+          }
+        });
+    });
+  
+    // Google Sign In functionality
+    document.getElementById('googleSignIn').addEventListener('click', function() {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // User signed in successfully with Google
+          console.log('User signed in successfully with Google');
+        })
+        .catch((error) => {
+          // Handle Google sign in errors
+          console.error('Error signing in with Google:', error);
+        });
+    });
+  
+    // Google Sign Up functionality
+    document.getElementById('googleSignUp').addEventListener('click', function() {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // User signed up successfully with Google
+          const userId = result.user.uid;
+          set(ref(database, 'users/' + userId), {
+            fullName: result.user.displayName,
+            email: result.user.email
+          });
+          console.log('User signed up successfully with Google');
+        })
+        .catch((error) => {
+          // Handle Google sign up errors
+          console.error('Error signing up with Google:', error);
+        });
+    });
+  </script>
+
+
+</div>
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3> <i class="fas fa-gear"></i> IT Services </h3>
+                <p>At Scrap2New, we're dedicated to providing a range of services that help individuals and organizations reduce electronic waste, promote sustainability, and access affordable technology solutions. Here are some of the services we offer</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>help center</h3>
+                <h4>Email</h4>
+                <a href="#" class="link">scrap2New@gmail.com</a>
+                <h4>call us</h4>
+                <p>+234 9044 0439 95 </p>
+            </div>
+
+            <div class="box">
+                <h3>quick message</h3>
+                <input type="text" name="" placeholder="enter your name" class="name">
+                <input type="email" name="" placeholder="enter your email" class="name">
+                <input type="submit" value="subscribe" class="btn">
+            </div>
+
+        </div>
+
+        <div class="credit">created by <span>CodekingDev<sup>++</sup></span> | all rights reserved!</div>
+
+    </section>
+
+
+
+    <!-- footer ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+</body>
+</html>

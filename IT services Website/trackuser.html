@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapbox Interactive Map Example</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        .marker {
+            background-size: cover;
+            transform-origin: center;
+        }
+        #destination-form {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="destination-form">
+        <input id="destination" type="text" placeholder="Enter destination" />
+        <button id="find-route">Find Route</button>
+    </div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY29kZWtpbmcxMiIsImEiOiJjbTBjZHF5bHUwMTloMmxxdHh4bHluZ2ZkIn0.ZIAVyQL8tF7qd6gWanrniw';
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [0, 0],
+            zoom: 2
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+        const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: false,
+        });
+
+        map.addControl(geocoder);
+
+        let userMarker = null;
+        let previousPosition = null;
+        let routeLayer = null;
+
+        function updateMarkerSize() {
+            if (userMarker) {
+                const zoom = map.getZoom();
+                const size = Math.max(30, zoom * 5); // Increase size with zoom level
+                userMarker.getElement().style.width = `${size}px`;
+                userMarker.getElement().style.height = `${size}px`;
+            }
+        }
+
+        function updatePosition(position) {
+            const { latitude, longitude, heading } = position.coords;
+            const lngLat = [longitude, latitude];
+
+            if (userMarker) {
+                userMarker.setLngLat(lngLat);
+
+                if (heading !== null) {
+                    userMarker.getElement().style.transform = `rotate(${heading}deg)`;
+                } else if (previousPosition) {
+                    const deltaLng = longitude - previousPosition.longitude;
+                    const deltaLat = latitude - previousPosition.latitude;
+                    const angle = Math.atan2(deltaLat, deltaLng) * (180 / Math.PI);
+                    userMarker.getElement().style.transform = `rotate(${angle}deg)`;
+                }
+
+                previousPosition = { latitude, longitude };
+                updateMarkerSize();
+            } else {
+                const el = document.createElement('div');
+                el.className = 'marker';
+                el.innerHTML = '<i class="bx bxs-car" style="font-size: 48px; color: red;"></i>';
+
+                userMarker = new mapboxgl.Marker(el)
+                    .setLngLat(lngLat)
+                    .setPopup(new mapboxgl.Popup().setText('You are here!'))
+                    .addTo(map)
+                    .togglePopup();
+
+                map.flyTo({
+                    center: lngLat,
+                    zoom: 16,
+                    speed: 0.5,
+                    curve: 1,
+                });
+
+                previousPosition = { latitude, longitude };
+                updateMarkerSize();
+            }
+        }
+
+        function error(err) {
+            alert(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(updatePosition, error, {
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 5000
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+
+        map.on('zoom', updateMarkerSize);
+
+        document.getElementById('find-route').addEventListener('click', () => {
+            const destination = document.getElementById('destination').value;
+            if (destination && userMarker) {
+                geocoder.query(destination, (err, data) => {
+                    if (err || !data || !data.results || data.results.length === 0) {
+                        alert('Unable to find destination');
+                        return;
+                    }
+                    
+                    const searchLocation = data.results[0].geometry.coordinates;
+                    const userPosition = userMarker.getLngLat().toArray();
+
+                    if (routeLayer) {
+                        map.removeLayer(routeLayer);
+                        map.removeSource('route');
+                    }
+
+                    map.addSource('route', {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'Feature',
+                            'properties': {},
+                            'geometry': {
+                                'type': 'LineString',
+                                'coordinates': [userPosition, searchLocation]
+                            }
+                        }
+                    });
+
+                    routeLayer = map.addLayer({
+                        'id': 'route',
+                        'type': 'line',
+                        'source': 'route',
+                        'layout': {
+                            'line-join': 'round',
+                            'line-cap': 'round'
+                        },
+                        'paint': {
+                            'line-color': '#888',
+                            'line-width': 8
+                        }
+                    });
+
+                    map.fitBounds([userPosition, searchLocation], {
+                        padding: 20
+                    });
+                });
+            } else {
+                alert('Please enter a destination');
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Mirrored from www.w3schools.com/w3css/tryw3css_templates_cv.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 01:33:17 GMT -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<link rel="shortcut icon" href="../images/codehub.jfif" type="image/x-icon">
+<title>RESET password</title>
+<style>
+   @media only screen and (max-width: 600px) {
+      # formCard{
+            width: 100%;
+        }
+    }
+</style>
+<body class="w3-display-container">
+  
+    
+    <div class="w3-card-4 " style="margin: 20px auto; width: 60%;" id=" formCard">
+
+        <div class="w3-container w3-green" >
+            <h2 class="w3-hide-small">Reset Your Password</h2>
+            <p class="w3-hide-large w3-hide-medium">RESET PASSWORD</p>
+        </div>
+        <br>
+        <form class="w3-container" id="reset-form">
+        <br>
+        <label>Email</label>
+        <input class="w3-input" type="Email" placeholder="Enter Register Emal address" id="email">
+        <br>
+        <button type="submit" class="w3-button w3-blue">Reset Password</button>
+        <p id="message"></p>
+        
+        </form>
+   
+
+        <script type="module">
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js';
+            import { getAuth } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js';
+          
+            // Initialize Firebase
+            const firebaseConfig = {
+              apiKey: "AIzaSyBJXJKVrLL8LQ1fIIO7i5jDZvCfWi-SFqw",
+              authDomain: "scra2new.firebaseapp.com",
+              projectId: "scra2new",
+              storageBucket: "scra2new.appspot.com",
+              messagingSenderId: "188933479868",
+              appId: "1:188933479868:web:5b2e348132d3db1c0c1fb9"
+            };
+          
+        
+              // Initialize Firebase
+              const app = initializeApp(firebaseConfig);
+              const auth = getAuth(app); // Initialize auth using getAuth
+            </script>
+        
+            <!-- Password Reset Script -->
+            <script>
+                const resetForm = document.getElementById('reset-form');
+                const emailInput = document.getElementById('email');
+                const message = document.getElementById('message');
+        
+                resetForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const email = emailInput.value;
+        
+                    try {
+                        // Fetch sign-in methods for the provided email
+                        const signInMethods = await auth.fetchSignInMethodsForEmail(email);
+        
+                        if (signInMethods.length > 0) {
+                            // Email exists in the authentication system
+                            await auth.sendPasswordResetEmail(email);
+                            message.textContent = 'Password reset email sent! Check your inbox.';
+                        } else {
+                            // Email does not exist in the authentication system
+                            message.textContent = 'Error: Email address not found.';
+                        }
+                    } catch (error) {
+                        // Handle errors
+                        message.textContent = `Error: ${error.message}`;
+                    }
+                });
+            </script>
+</body>
+</html>
